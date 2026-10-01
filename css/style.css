@@ -181,3 +181,14 @@ nav ul li a.active {
   color: white;
   box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
 }
+/* Trang trí cho nút menu đang được chọn (active) */
+nav ul li a.active {
+    font-weight: bold;
+    color: #ff9900; /* Thay màu cam này bằng màu bạn thích */
+    text-decoration: underline;
+}
+
+/* Ẩn main lúc đầu để JS làm hiệu ứng chuyển động */
+main {
+    opacity: 1; /* Mặc định nếu JS lỗi vẫn hiển thị */
+}
