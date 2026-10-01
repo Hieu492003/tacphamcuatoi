@@ -19,23 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (themeToggleBtn) themeToggleBtn.textContent = "☀️ Light Mode";
   }
 
-  // Sự kiện khi bấm nút chuyển đổi
-  if (themeToggleBtn) {
-    themeToggleBtn.addEventListener("click", () => {
-      document.body.classList.toggle("dark-mode");
-      let theme = "light";
-      
-      if (document.body.classList.contains("dark-mode")) {
-        theme = "dark";
-        themeToggleBtn.textContent = "☀️ Light Mode";
-      } else {
-        themeToggleBtn.textContent = "🌙 Dark Mode";
-      }
-      
-      // Lưu lựa chọn vào bộ nhớ trình duyệt
-      localStorage.setItem("theme", theme);
-    });
-  }
+ 
+  
 
   // --- 3. HIỆU ỨNG GÕ CHỮ (TYPING EFFECT) CHO TRANG CHỦ ---
   const typingElement = document.getElementById("typing-text");
