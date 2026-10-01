@@ -192,3 +192,145 @@ nav ul li a.active {
 main {
     opacity: 1; /* Mặc định nếu JS lỗi vẫn hiển thị */
 }
+/* Import font chữ hiện đại từ Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+/* Biến màu sắc mặc định (Dark Mode) */
+:root {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --accent-color: #ff9900;
+    --nav-bg: #1f1f1f;
+}
+
+/* Biến màu sắc khi chuyển sang Light Mode */
+.light-theme {
+    --bg-color: #f4f4f9;
+    --text-color: #333333;
+    --accent-color: #e65c00;
+    --nav-bg: #ffffff;
+}
+
+/* Cài đặt chung */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.4s ease, color 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Thanh điều hướng */
+nav {
+    background-color: var(--nav-bg);
+    padding: 15px 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: background-color 0.4s ease;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 5px 10px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    color: var(--accent-color);
+}
+
+/* Nội dung chính */
+main {
+    flex: 1;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+    line-height: 1.6;
+}
+
+h1, h2 {
+    color: var(--accent-color);
+}
+
+/* Danh sách link âm nhạc và mạng xã hội */
+ul.music-list, ul.social-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+ul.music-list a, ul.social-links a {
+    display: inline-block;
+    padding: 12px 30px;
+    width: 250px;
+    background-color: var(--nav-bg);
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+ul.music-list a:hover, ul.social-links a:hover {
+    background-color: var(--accent-color);
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 153, 0, 0.4);
+}
+
+/* Chân trang */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--nav-bg);
+    margin-top: auto;
+    transition: background-color 0.4s ease;
+}
+
+.footer-sub {
+    font-size: 0.85em;
+    opacity: 0.6;
+    margin-top: 5px;
+}
+
+/* Nút Sáng/Tối */
+.theme-toggle {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: var(--nav-bg);
+    border: 2px solid var(--accent-color);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    font-size: 24px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s, background-color 0.4s;
+    z-index: 1000;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1) rotate(15deg);
+}
