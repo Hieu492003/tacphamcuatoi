@@ -1,0 +1,266 @@
+/* ==========================================================================
+   1. CORE RESET & VARIABLES
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-color: #0f172a;
+  --card-bg: #1e293b;
+  --card-hover-border: #475569;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --primary-color: #6366f1;
+  --primary-hover: #4f46e5;
+  --border-color: #334155;
+  --font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --radius: 12px;
+  --transition: all 0.25s ease-in-out;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ==========================================================================
+   2. HEADER & NAVIGATION
+   ========================================================================== */
+header {
+  width: 100%;
+}
+
+nav {
+  width: 100%;
+  background-color: rgba(30, 41, 59, 0.85);
+  backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid var(--border-color);
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+  padding: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: var(--transition);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  text-transform: capitalize;
+}
+
+nav a:hover {
+  color: var(--text-main);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ==========================================================================
+   3. LAYOUT & CARDS
+   ========================================================================== */
+main {
+  width: 100%;
+  max-width: 800px;
+  padding: 2.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+section {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+section:hover {
+  border-color: var(--card-hover-border);
+}
+
+h1, h2 {
+  color: var(--text-main);
+  margin-bottom: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #ffffff 0%, #a5b4fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h2 {
+  font-size: 1.4rem;
+  border-bottom: 2px solid var(--primary-color);
+  display: inline-block;
+  padding-bottom: 0.3rem;
+  margin-bottom: 1.2rem;
+}
+
+p {
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* ==========================================================================
+   4. SERVICES, SOCIAL LINKS & MUSIC LISTS
+   ========================================================================== */
+#services ul,
+.social-links,
+.music-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+#services li,
+.music-list li {
+  flex: 1;
+  min-width: 140px;
+}
+
+/* Định dạng chung cho thẻ link & list item trong Services / Music */
+#services a,
+#services li,
+.music-list li {
+  display: block;
+  text-align: center;
+  padding: 0.85rem 1.2rem;
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+
+#services a:hover,
+.music-list li:hover {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+/* ==========================================================================
+   5. FORM STYLES
+   ========================================================================== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+label {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: -0.5rem;
+  font-weight: 500;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-main);
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: var(--transition);
+  outline: none;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+button[type="submit"] {
+  padding: 0.8rem 1.8rem;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  align-self: flex-start;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   6. RESPONSIVE DESIGN
+   ========================================================================== */
+@media (max-width: 600px) {
+  nav ul {
+    gap: 0.5rem;
+    padding: 0.75rem;
+  }
+
+  nav a {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.85rem;
+  }
+
+  main {
+    padding: 1.5rem 1rem;
+  }
+
+  section {
+    padding: 1.25rem;
+  }
+
+  button[type="submit"] {
+    width: 100%;
+  }
+}
