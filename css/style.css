@@ -215,25 +215,3 @@ body.dark-mode .social-links li a:hover {
   color: white;
 }
 
-/* Nút chuyển đổi Dark/Light Mode */
-#theme-toggle {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  padding: 12px 20px;
-  border-radius: 30px;
-  border: none;
-  background: #6c5ce7;
-  color: white;
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 700;
-  cursor: pointer;
-  box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
-  transition: all 0.3s ease;
-  z-index: 1000;
-}
-
-#theme-toggle:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(108, 92, 231, 0.5);
-}
