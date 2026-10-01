@@ -175,43 +175,9 @@ p {
     font-size: 1rem;
   }
 }
-/* =========================================
-   Giao diện Tối (Dark Mode)
-   ========================================= */
-body.dark-mode {
-  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-  color: #f8fafc;
-}
-
-body.dark-mode nav,
-body.dark-mode section {
-  background: rgba(30, 41, 59, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-}
-
-body.dark-mode h1,
-body.dark-mode h2,
-body.dark-mode p {
-  color: #f1f5f9;
-}
-
-body.dark-mode nav ul li a {
-  color: #cbd5e1;
-}
-
-/* Đổi màu danh sách link/nhạc trong Dark Mode */
-body.dark-mode .music-list li a,
-body.dark-mode .social-links li a {
-  background: #334155;
-  color: #f8fafc;
-  border-color: #475569;
-}
-
-body.dark-mode .music-list li a:hover,
-body.dark-mode .social-links li a:hover {
+/* Trạng thái khi đang ở trang hiện tại */
+nav ul li a.active {
   background: #6c5ce7;
-  border-color: #6c5ce7;
   color: white;
+  box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
 }
-
